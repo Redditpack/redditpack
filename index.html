@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Acesso Premium — US$ 5.99</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fonte Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root{
+            --yellow:#FFD300;
+            --dark:#050505;
+            --card:#111;
+        }
+
+        body {
+            background: var(--dark);
+            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            padding-top: 40px;
+            text-align: center;
+        }
+
+        /* HERO */
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 3rem;
+            max-width: 760px;
+            margin: 0 auto 14px auto;
+        }
+
+        .hero-sub {
+            font-size: 1.15rem;
+            max-width: 680px;
+            margin: 0 auto 22px auto;
+            opacity: 0.85;
+        }
+
+        /* Preço */
+        .price-box{
+            margin-top: 22px;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+        .price-box span{
+            color: var(--yellow);
+            font-size: 2rem;
+        }
+
+        /* BOTÃO */
+        .btn-yellow{
+            background: var(--yellow);
+            color:#000;
+            border:none;
+            padding:14px 34px;
+            border-radius:8px;
+            font-weight:700;
+            font-size:1.15rem;
+            text-decoration:none;
+            display:inline-block;
+            margin-top:22px;
+            animation: pulse 1.7s infinite ease-in-out;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+
+
+        /* --- GALERIA (benefícios) --- */
+        .gallery-title { font-size: 1.6rem; margin-top: 50px; margin-bottom: 12px; font-weight:600; }
+
+        .gallery-scroll {
+            display:flex;
+            gap:16px;
+            padding:18px 0;
+            overflow-x:auto;
+            -webkit-overflow-scrolling: touch;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+        }
+        .gallery-scroll::-webkit-scrollbar { display: none; }
+
+        .gallery-card {
+            min-width: 300px;
+            height: 200px;
+            border-radius: 14px;
+            overflow: hidden;
+            background:#222;
+            flex: 0 0 auto;
+            scroll-snap-align: center;
+            border:1px solid #333;
+        }
+
+        .gallery-card img {
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+
+
+        /* --- SESSÃO DE GARANTIA --- */
+        .guarantee-box{
+            background:#0e0e0e;
+            border:1px solid #333;
+            padding:24px;
+            border-radius:14px;
+            max-width:800px;
+            margin:45px auto 10px auto;
+        }
+        .guarantee-title{
+            font-size:1.4rem;
+            font-weight:600;
+            margin-bottom:8px;
+        }
+        .guarantee-text{
+            opacity:0.85;
+            font-size:1rem;
+        }
+
+
+
+        /* --- DEPOIMENTOS --- */
+        .depo-title { 
+            font-size: 1.6rem; 
+            margin-top: 50px; 
+            margin-bottom: 16px; 
+            font-weight:600; 
+        }
+
+        .depo-scroll {
+            display:flex;
+            gap:15px;
+            padding:16px 0 28px 0;
+            overflow-x:auto;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .depo-scroll::-webkit-scrollbar{ display: none; }
+
+        .depo-item {
+            flex: 0 0 auto;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            width: 230px;
+        }
+
+        .stars {
+            color: var(--yellow);
+            font-size: 1rem;
+            margin-bottom: 6px;
+            letter-spacing: 2px;
+        }
+
+        .depo-card {
+            width: 250px;
+            background: var(--card);
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 12px;
+            height: 160px;
+            box-sizing: border-box;
+            display:flex;
+            align-items:flex-start;
+            gap:10px;
+            overflow: hidden;
+        }
+
+        .depo-card .avatar {
+            width: 42px;
+            height: 42px;
+            border-radius:50%;
+            object-fit:cover;
+            flex: 0 0 auto;
+        }
+
+        .depo-card .text {
+            font-size:0.72rem;
+            line-height:1.1rem;
+            color:#fff;
+            text-align:left;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* rodapé */
+        footer{
+            margin-top:40px;
+            margin-bottom:10px;
+            font-size:0.72rem;
+            color:#777;
+        }
+
+        /* Responsivo */
+        @media(max-width:480px){
+            .hero-title{ font-size:2rem; line-height:2.4rem; }
+            .btn-yellow{ font-size:1rem; padding:12px 24px; }
+            .gallery-card{ min-width:240px; height:150px; }
+            .depo-card{ width:200px; height:96px; }
+            .depo-item{ width:200px; }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+<br>
+
+    <!-- HERO -->
+    <h1 class="hero-title">GitPack <span style="color:#FFD300;">US$ 5,99</span></h1>
+<br>
+<br>
+    <div class="hero-sub">
+      Stop masturbating to short clips you fish out of the internet right now!
+<br>
+Get access to the full 1-hour uncut scenes from the world's top producers!
+<br>
+Bonnie Blue with 100 guys, 1000 guys, Blackedraw and more.
+<br>
+No sign-up, no login,full content delivered straight to your hand.
+    </div>
+
+    <div class="price-box">
+        <span>US$ 5,99</span> <br> Pay Once, Get Access Instantly.
+    </div>
+
+    <a class="btn-yellow" href="https://google.com">Lets go!</a>
+
+
+    <!-- BENEFÍCIOS – GALERIA -->
+    <div class="gallery-title">What You'll Get </div>
+
+    <div class="gallery-scroll">
+        <div class="gallery-card"><img src="https://picsum.photos/seed/benef1/800/600" /></div>
+        <div class="gallery-card"><img src="https://picsum.photos/seed/benef2/800/600" /></div>
+        <div class="gallery-card"><img src="https://picsum.photos/seed/benef3/800/600" /></div>
+        <div class="gallery-card"><img src="https://picsum.photos/seed/benef4/800/600" /></div>
+        <div class="gallery-card"><img src="https://picsum.photos/seed/benef5/800/600" /></div>
+        <div class="gallery-card"><img src="https://picsum.photos/seed/benef6/800/600" /></div>
+    </div>
+
+
+    <!-- GARANTIA -->
+ 
+
+
+    <!-- DEPOIMENTOS -->
+    <div class="depo-title">What Our Users Are Saying</div>
+    <div class="depo-scroll">
+
+        <div class="depo-item">
+            <div class="stars">★★★★★</div>
+            <div class="depo-card">
+                <img class="avatar" src="https://www.redditstatic.com/avatars/avatar_default_01_0DD3BB.png">
+                <div class="text">“Worth every single penny! That's a huge amount of content for the price.”</div>
+            </div>
+        </div>
+
+        <div class="depo-item">
+            <div class="stars">★★★★</div>
+            <div class="depo-card">
+                <img class="avatar" src="https://www.redditstatic.com/avatars/avatar_default_02_46D160.png">
+                <div class="text">““Dammit bro, only 6 bucks? This is practically free!””</div>
+            </div>
+        </div>
+
+        <div class="depo-item">
+            <div class="stars">★★★★★</div>
+            <div class="depo-card">
+                <img class="avatar" src="https://www.redditstatic.com/avatars/avatar_default_03_A5A4A4.png">
+                <div class="text">“I thought it would be pretty basic, but I was seriously surprised by the amount of content.”</div>
+            </div>
+        </div>
+
+        <div class="depo-item">
+            <div class="stars">★★★★★</div>
+            <div class="depo-card">
+                <img class="avatar" src="https://www.redditstatic.com/avatars/avatar_default_04_FF66AC.png">
+                <div class="text">“Easy to access, super well-organized, and straight to the point.”</div>
+            </div>
+        </div>
+ <div class="depo-item">
+            <div class="stars">★★★★★</div>
+            <div class="depo-card">
+                <img class="avatar" src="https://www.redditstatic.com/avatars/avatar_default_03_46A508.png">
+                <div class="text">“My dick is going to be raw from jerking off so much.”</div>
+            </div>
+        </div>
+ <div class="depo-item">
+            <div class="stars">★★★★★</div>
+            <div class="depo-card">
+                <img class="avatar" src="https://www.redditstatic.com/avatars/avatar_default_02_EA0027.png">
+                <div class="text">“Access was immediate, 10/10.”</div>
+            </div>
+        </div>
+ <div class="depo-item">
+            <div class="stars">★★★★</div>
+            <div class="depo-card">
+                <img class="avatar" src="https://media.geeksforgeeks.org/wp-content/uploads/20200619190327/avatar_default_19_A06A42.png">
+                <div class="text">“I only didn't give it 5 stars because I can't cum anymore.”</div>
+            </div>
+        </div>
+
+    </div>
+
+    <a class="btn-yellow" href="https://google.com">Get The Pack Now for US$ 5,99</a>
+
+    <footer>© 2025 — All rights reserved.</footer>
+
+</div>
+
+
+<!-- SCRIPT DRAG PARA MOBILE + PC -->
+<script>
+document.querySelectorAll('.gallery-scroll, .depo-scroll').forEach(carousel => {
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    carousel.addEventListener('mousedown', e => {
+        isDown = true;
+        startX = e.pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+    });
+
+    carousel.addEventListener('mouseleave', () => isDown = false);
+    carousel.addEventListener('mouseup', () => isDown = false);
+
+    carousel.addEventListener('mousemove', e => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - carousel.offsetLeft;
+        carousel.scrollLeft = scrollLeft - (x - startX) * 2;
+    });
+
+    // Touch
+    carousel.addEventListener('touchstart', e => {
+        isDown = true;
+        startX = e.touches[0].pageX - carousel.offsetLeft;
+        scrollLeft = carousel.scrollLeft;
+    });
+
+    carousel.addEventListener('touchend', () => isDown = false);
+
+    carousel.addEventListener('touchmove', e => {
+        if (!isDown) return;
+        const x = e.touches[0].pageX - carousel.offsetLeft;
+        carousel.scrollLeft = scrollLeft - (x - startX) * 2;
+    });
+});
+</script>
+
+</body>
+</html>
