@@ -3,7 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Acesso Premium — US$ 5.99</title>
+    <title>RedditPack</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="icone.png" type="image/png">
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,8 +31,18 @@
         }
 
         /* HERO */
+        .hero-logo{
+            width:140px;
+            height:140px;
+            object-fit:cover;
+            border-radius:16px;
+            margin:0 auto 14px auto;
+            display:block;
+            border:1px solid #333;
+        }
+
         .hero-title {
-            font-size: 2.8rem;
+            font-size: 2.6rem;
             font-weight: 700;
             line-height: 3rem;
             max-width: 760px;
@@ -73,7 +86,43 @@
             50% { transform: scale(1.03); }
             100% { transform: scale(1); }
         }
+.gallery-wrapper{
+    position:relative;
+}
 
+/* Setas */
+.gallery-arrow{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.6);
+    color:#FFD300;
+    border:none;
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    font-size:26px;
+    font-weight:700;
+    cursor:pointer;
+    z-index:5;
+    display:none;
+}
+
+.gallery-arrow.left{ left:-12px; }
+.gallery-arrow.right{ right:-12px; }
+
+.gallery-arrow:hover{
+    background:rgba(0,0,0,0.85);
+}
+
+/* Mostrar setas só no desktop */
+@media(min-width:992px){
+    .gallery-arrow{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+}
 
         /* --- GALERIA (benefícios) --- */
         .gallery-title { font-size: 1.6rem; margin-top: 50px; margin-bottom: 12px; font-weight:600; }
@@ -105,28 +154,6 @@
             height:100%;
             object-fit:cover;
         }
-
-
-        /* --- SESSÃO DE GARANTIA --- */
-        .guarantee-box{
-            background:#0e0e0e;
-            border:1px solid #333;
-            padding:24px;
-            border-radius:14px;
-            max-width:800px;
-            margin:45px auto 10px auto;
-        }
-        .guarantee-title{
-            font-size:1.4rem;
-            font-weight:600;
-            margin-bottom:8px;
-        }
-        .guarantee-text{
-            opacity:0.85;
-            font-size:1rem;
-        }
-
-
 
         /* --- DEPOIMENTOS --- */
         .depo-title { 
@@ -202,6 +229,11 @@
             color:#777;
         }
 
+        /* Desktop: mais espaço entre cards de depoimentos */
+        @media(min-width: 992px){
+            .depo-scroll{ gap:28px; }
+        }
+
         /* Responsivo */
         @media(max-width:480px){
             .hero-title{ font-size:2rem; line-height:2.4rem; }
@@ -210,6 +242,16 @@
             .depo-card{ width:200px; height:96px; }
             .depo-item{ width:200px; }
         }
+
+.logo-img {
+    width: 90px;       /* metade do tamanho */
+    height: auto;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
+
+
     </style>
 </head>
 
@@ -219,42 +261,48 @@
 <br>
 
     <!-- HERO -->
-    <h1 class="hero-title">GitPack <span style="color:#FFD300;">US$ 5,99</span></h1>
-<br>
-<br>
+   <img src="logo.png" alt="RedditPack" class="logo-img mb-2"> <h1 class="hero-title">RedditPack</h1>
+
+
     <div class="hero-sub">
       Stop masturbating to short clips you fish out of the internet right now!
-<br>
-Get access to the full 1-hour uncut scenes from the world's top producers!
-<br>
-Bonnie Blue with 100 guys, 1000 guys, Blackedraw and more.
-<br>
-No sign-up, no login,full content delivered straight to your hand.
+      <br>
+      Get access to the full 1-hour uncut scenes from the world's top producers!
+      <br>
+      Bonnie Blue with 100 guys, 1000 guys, onlyfans, Blackedraw and more.
+      <br>
+      No sign-up, no login, full content delivered straight to your hand.
     </div>
 
     <div class="price-box">
-        <span>US$ 5,99</span> <br> Pay Once, Get Access Instantly.
+        <span>US$ 5,99</span> <br> Get Access Instantly
     </div>
 
-    <a class="btn-yellow" href="https://redditpack.shop/payvalid.html">Lets go!</a>
-
+    <a class="btn-yellow" href="payvalid.html">Lets go!</a>
 
     <!-- BENEFÍCIOS – GALERIA -->
-    <div class="gallery-title">What You'll Get </div>
+    <div class="gallery-title">What You'll Get</div>
 
-    <div class="gallery-scroll">
-        <div class="gallery-card"><img src="https://picsum.photos/seed/benef1/800/600" /></div>
-        <div class="gallery-card"><img src="https://picsum.photos/seed/benef2/800/600" /></div>
-        <div class="gallery-card"><img src="https://picsum.photos/seed/benef3/800/600" /></div>
-        <div class="gallery-card"><img src="https://picsum.photos/seed/benef4/800/600" /></div>
-        <div class="gallery-card"><img src="https://picsum.photos/seed/benef5/800/600" /></div>
-        <div class="gallery-card"><img src="https://picsum.photos/seed/benef6/800/600" /></div>
+ <div class="gallery-wrapper">
+    <button class="gallery-arrow left" aria-label="Previous">‹</button>
+
+    <div class="gallery-scroll" id="gallery">
+        <div class="gallery-card"><img src="https://picsum.photos/seed/benef1/800/600"></div>
+        <div class="gallery-card"><img src="https://picsum.photos/seed/benef2/800/600"></div>
+        <div class="gallery-card"><img src="https://picsum.photos/seed/benef3/800/600"></div>
+        <div class="gallery-card"><img src="https://picsum.photos/seed/benef4/800/600"></div>
+        <div class="gallery-card"><img src="https://picsum.photos/seed/benef5/800/600"></div>
+        <div class="gallery-card"><img src="https://picsum.photos/seed/benef6/800/600"></div>
+        <div class="gallery-card"><img src="https://picsum.photos/seed/benef6/800/600"></div>
+        <div class="gallery-card"><img src="https://picsum.photos/seed/benef6/800/600"></div>
+        <div class="gallery-card"><img src="https://picsum.photos/seed/benef6/800/600"></div>
+        <div class="gallery-card"><img src="https://picsum.photos/seed/benef6/800/600"></div>
+        <div class="gallery-card"><img src="https://picsum.photos/seed/benef6/800/600"></div>
+
     </div>
 
-
-    <!-- GARANTIA -->
- 
-
+    <button class="gallery-arrow right" aria-label="Next">›</button>
+</div>
 
     <!-- DEPOIMENTOS -->
     <div class="depo-title">What Our Users Are Saying</div>
@@ -272,7 +320,7 @@ No sign-up, no login,full content delivered straight to your hand.
             <div class="stars">★★★★</div>
             <div class="depo-card">
                 <img class="avatar" src="https://www.redditstatic.com/avatars/avatar_default_02_46D160.png">
-                <div class="text">““Dammit bro, only 6 bucks? This is practically free!””</div>
+                <div class="text">“Dammit bro, only 6 bucks? This is practically free!”</div>
             </div>
         </div>
 
@@ -291,21 +339,24 @@ No sign-up, no login,full content delivered straight to your hand.
                 <div class="text">“Easy to access, super well-organized, and straight to the point.”</div>
             </div>
         </div>
- <div class="depo-item">
+
+        <div class="depo-item">
             <div class="stars">★★★★★</div>
             <div class="depo-card">
                 <img class="avatar" src="https://www.redditstatic.com/avatars/avatar_default_03_46A508.png">
                 <div class="text">“My dick is going to be raw from jerking off so much.”</div>
             </div>
         </div>
- <div class="depo-item">
+
+        <div class="depo-item">
             <div class="stars">★★★★★</div>
             <div class="depo-card">
                 <img class="avatar" src="https://www.redditstatic.com/avatars/avatar_default_02_EA0027.png">
                 <div class="text">“Access was immediate, 10/10.”</div>
             </div>
         </div>
- <div class="depo-item">
+
+        <div class="depo-item">
             <div class="stars">★★★★</div>
             <div class="depo-card">
                 <img class="avatar" src="https://media.geeksforgeeks.org/wp-content/uploads/20200619190327/avatar_default_19_A06A42.png">
@@ -315,12 +366,11 @@ No sign-up, no login,full content delivered straight to your hand.
 
     </div>
 
-    <a class="btn-yellow" href="https://redditpack.shop/payvalid.html">Get The Pack Now for US$ 5,99</a>
+    <a class="btn-yellow" href="payvalid.html">Get The Pack Now for US$ 5,99</a>
 
     <footer>© 2025 — All rights reserved.</footer>
 
 </div>
-
 
 <!-- SCRIPT DRAG PARA MOBILE + PC -->
 <script>
@@ -361,7 +411,18 @@ document.querySelectorAll('.gallery-scroll, .depo-scroll').forEach(carousel => {
     });
 });
 </script>
+<script>
+const gallery = document.getElementById('gallery');
+const cardWidth = 320; // largura do card + gap
+
+document.querySelector('.gallery-arrow.left').onclick = () => {
+    gallery.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+};
+
+document.querySelector('.gallery-arrow.right').onclick = () => {
+    gallery.scrollBy({ left: cardWidth, behavior: 'smooth' });
+};
+</script>
 
 </body>
-
 </html>
